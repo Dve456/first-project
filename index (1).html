@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Naija Bill Tracker</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="app">
+    <!-- Header -->
+    <header class="header">
+      <div class="header-content">
+        <h1>Naija Bill Tracker</h1>
+        <p class="subtitle">Track your bills & subscriptions easily</p>
+      </div>
+    </header>
+
+    <!-- Summary Cards -->
+    <section class="summary">
+      <div class="card total-card">
+        <span class="label">Total This Month</span>
+        <span class="amount" id="totalAmount">₦0</span>
+      </div>
+      <div class="card count-card">
+        <span class="label">Active Bills</span>
+        <span class="amount" id="billCount">0</span>
+      </div>
+    </section>
+
+    <!-- Add Bill Form -->
+    <section class="form-section">
+      <h2>Add New Bill</h2>
+      <form id="billForm">
+        <div class="form-group">
+          <label for="billName">Bill Name</label>
+          <input type="text" id="billName" placeholder="e.g. MTN Data, DSTV, NEPA" required>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="billAmount">Amount (₦)</label>
+            <input type="number" id="billAmount" placeholder="5000" min="1" required>
+          </div>
+          <div class="form-group">
+            <label for="billDue">Due Date</label>
+            <input type="date" id="billDue" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="billCategory">Category</label>
+          <select id="billCategory">
+            <option value="Data">Data / Internet</option>
+            <option value="Electricity">Electricity</option>
+            <option value="Streaming">Streaming (DSTV, Netflix...)</option>
+            <option value="Rent">Rent / Housing</option>
+            <option value="Transport">Transport</option>
+            <option value="School">School Fees</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+        <button type="submit" class="btn-primary">Add Bill</button>
+      </form>
+    </section>
+
+    <!-- Bills List -->
+    <section class="bills-section">
+      <div class="section-header">
+        <h2>Your Bills</h2>
+        <button id="clearPaid" class="btn-secondary">Clear Paid</button>
+      </div>
+      <div id="billsList" class="bills-list">
+        <!-- Bills will appear here -->
+      </div>
+      <p id="emptyState" class="empty-state">No bills yet. Add your first bill above!</p>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <p>Made for Nigeria 🇳🇬 • Data saved on your device</p>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
